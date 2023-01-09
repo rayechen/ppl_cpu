@@ -35,9 +35,9 @@ jobs:
 
       - name: Build
         run: |
-          cd ../../ && ./build_pplnn.sh ${{ github.run_id }} x86_64
+          cd ../../ && ./build.sh ${{ github.run_id }} x86_64
 
-      - name: cleanup
+      - name: Cleanup
         if: ${{ always() }}
         run: |
-          cd ../../ && ./clean_pplnn.sh ${{ github.run_id }}
+          cd ../../ && ./cleanup.sh ${{ github.run_id }}
